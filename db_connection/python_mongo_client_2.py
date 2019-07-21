@@ -37,7 +37,7 @@ DB_SOURCE = 'xprdb'
 client = MongoClient(DB_MACHINE, DB_PORT)
 db = client.db_name
 if db.authenticate(DB_USER, DB_PASS, source=DB_SOURCE):
-    print('Trust in God')
+    print('MongoDB Connection is successful')
 
 else:
-    print('Connection Failed')
+    print('MongoDB Connection Failed')
