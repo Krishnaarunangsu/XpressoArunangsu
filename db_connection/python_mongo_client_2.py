@@ -25,11 +25,11 @@ DB_PORT = 27017
 DB_SOURCE = 'xprdb'
 
 # *********************************************
-DB_USER = 'abzAdmin'
-DB_PASS = 'Abz00ba1nc'
-DB_MACHINE = 'localhost'
-DB_PORT = 27017
-DB_SOURCE = 'mydb1'
+# DB_USER = 'abzAdmin'
+# DB_PASS = 'Abz00ba1nc'
+# DB_MACHINE = 'localhost'
+# DB_PORT = 27017
+# DB_SOURCE = 'mydb1'
 # Or use the MongoDB URI format:
 #client = MongoClient('mongodb://username:password@localhost:27017/')
 
