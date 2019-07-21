@@ -1,0 +1,11 @@
+test_name: Check response status code for a very simple addition API
+stages:
+  - name: Verify that status code equals 200 when two integers are specified
+    request:
+      url: http://localhost:5000/add
+      json:
+        first_number: 5
+        second_number: 6
+      method: POST
+    response:
+      status_code: 200

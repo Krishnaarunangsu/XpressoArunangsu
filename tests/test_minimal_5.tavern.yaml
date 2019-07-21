@@ -1,0 +1,20 @@
+test_name: Check place name for multiple combinations of country code and zip code
+marks:
+  - parametrize:
+      key:
+        - country_code
+        - zip_code
+        - place_name
+      vals:
+        - [us, 12345, Schenectady]
+        - [ca, B2A, North Sydney South Central]
+        - [nl, 3825, Vathorst]
+stages:
+  - name: Verify place name in response body
+    request:
+      url: http://api.zippopotam.us/{country_code}/{zip_code}
+      method: GET
+    response:
+      body:
+        places:
+          - place name: "{place_name}"

@@ -1,0 +1,9 @@
+test_name: Get location for US zip code 90210 and check response content type
+stages:
+  - name: Check that content type equals application/json
+    request:
+      url: http://api.zippopotam.us/us/90210
+      method: GET
+    response:
+      headers:
+        content-type: application/json
