@@ -104,7 +104,7 @@ class AttributeInfo:
                kurtosis
 
     @staticmethod
-    def categorical_analysis(data, threshold=2):
+    def categorical_analysis(data, threshold=10):
         '''
         :param data: Input pandas categorical series data
         :param threshold: Count percentage value for defining Outlier Categories
@@ -117,6 +117,8 @@ class AttributeInfo:
             if (freq_count[label] / num_rows) * 100 < threshold:
                 outliers.append(label)
 
+        print(freq_count)
+        print(np.array(outliers))
         return np.array(outliers), freq_count
 
     @staticmethod
