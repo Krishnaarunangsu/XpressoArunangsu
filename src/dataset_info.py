@@ -36,12 +36,13 @@ class DataSetInfo:
             print(f'AttributeInfo:{self.attributeInfo}')
 
             for attr in self.attributeInfo:
+                print('xpresso')
                 attr.dtype = data[attr.name].dtype
                 print(f'Attribute Data Type:{attr.dtype}')
                 attr.type = self.find_attr_type(data[attr.name], attr.dtype)
                 print(f'Attribute Type:{attr.type}')
                 if attr.type is DataType.DATE.value:
-                    data[attr.name] = data[attr.name].apply(lambda x: x if pd.isna(x) else parse(x))
+                    data[attr.name] = data[attr.name].apply(lambda x: x if pd.isnull(x) else parse(x))
                     attr.dtype = data[attr.name].dtype
 
         # For semi-structured data type
@@ -65,7 +66,7 @@ class DataSetInfo:
                 parse(date[1])
                 is_date_bool.append(True)
             except ValueError:
-                is_date_bool.append(False)
+                is_date_bool.adppend(False)
         ret = True if sum(is_date_bool) > len(is_date_bool) / 2 else False
         return ret
 

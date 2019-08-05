@@ -51,7 +51,7 @@ class AttributeInfo:
         """
 
         num_rows = float(data.size)
-        na_count = float(data.isna().sum())
+        na_count = float(data.isnull().sum())
         na_count_percentage = round((na_count/num_rows)*100, AttributeInfo.DECIMAL_PRECISION)
         missing_count = float((data == "").sum())
         missing_count_percentage = round((missing_count/num_rows)*100,AttributeInfo.DECIMAL_PRECISION)
@@ -117,6 +117,7 @@ class AttributeInfo:
             if (freq_count[label] / num_rows) * 100 < threshold:
                 outliers.append(label)
 
+        print(np.array(outliers))
         return np.array(outliers), freq_count
 
     @staticmethod

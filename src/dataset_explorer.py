@@ -24,6 +24,7 @@ class Explorer:
         :return:
         """
         self.dataset.info.populate_attribute(self.dataset.data, self.dataset.type)
+        print('JKHJKKK')
         return
 
     def explore_metrics(self):
