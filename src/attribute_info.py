@@ -51,7 +51,7 @@ class AttributeInfo:
         """
 
         num_rows = float(data.size)
-        na_count = float(data.isna().sum())
+        na_count = float(data.isnull().sum())
         na_count_percentage = round((na_count/num_rows)*100, AttributeInfo.DECIMAL_PRECISION)
         missing_count = float((data == "").sum())
         missing_count_percentage = round((missing_count/num_rows)*100,AttributeInfo.DECIMAL_PRECISION)
@@ -104,7 +104,7 @@ class AttributeInfo:
                kurtosis
 
     @staticmethod
-    def categorical_analysis(data, threshold=2):
+    def categorical_analysis(data, threshold=10):
         '''
         :param data: Input pandas categorical series data
         :param threshold: Count percentage value for defining Outlier Categories
@@ -117,6 +117,11 @@ class AttributeInfo:
             if (freq_count[label] / num_rows) * 100 < threshold:
                 outliers.append(label)
 
+<<<<<<< HEAD
+=======
+        print(freq_count)
+>>>>>>> 3680cc83e6e9fabd42cc7034eecc68727f491f67
+        print(np.array(outliers))
         return np.array(outliers), freq_count
 
     @staticmethod

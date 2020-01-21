@@ -48,12 +48,17 @@ if __name__ == "__main__":
     data = Dataset()
     #data.Import("./config/test/data/test.csv", "", "")
     data.Import("Train.csv", "", "")
+<<<<<<< HEAD
+    #data.Import("../data/names.csv", "", "")
+=======
+    data.Import("../data/train3.csv", "", "")
+>>>>>>> 3680cc83e6e9fabd42cc7034eecc68727f491f67
     explorer = Explorer(data)
     print('Data Understanding Starting')
     explorer.understand()
     print('***********************************')
-   # print('Data Exploration Starting')
-   # explorer.explore_attributes()
+    print('Data Exploration Starting')
+    explorer.explore_attributes()
     #for val in data.info.attributeInfo:
         #print("Name : {} , Dtype : {} ,  Type : {} , Metrics : {} \n".format(
             #val.name,
